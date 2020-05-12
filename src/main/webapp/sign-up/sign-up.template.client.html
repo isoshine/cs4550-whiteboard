@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign-up</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="../style.css" rel="stylesheet"/>
+    <link href="sign-up.style.client.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="mx-auto" style="width: 500px;" class="container">
+        <h1>Sign-up</h1>
+
+        <label for="username">Username</label>
+        <input  class="form-control"
+                id="username"
+                type="text"
+                placeholder="joe123"/>
+
+        <label for="password">Password</label>
+        <input  class="form-control"
+                id="password"
+                type="password"
+                placeholder="********"
+                title="passwords must be at least 8 characters"/>
+
+        <label for="verify">Verify Password</label>
+        <input  class="form-control"
+                id="verify"
+                type="password"
+                placeholder="********"/>
+
+        <a href="/../profile/profile.template.client.html" class="btn btn-primary">
+            Sign Up
+        </a>
+
+        <br/>
+
+        <div class="float-right">Already have an account?</div>
+            <br/>
+        <a class="float-right" href="/../sign-in/sign-in.template.client.html">
+            Sign in
+        </a>
+
+        <a href="/../index.html">Cancel</a>
+
+    </div>
+
+</body>
+</html>
