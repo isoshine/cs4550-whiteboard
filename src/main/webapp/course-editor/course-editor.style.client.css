@@ -2,3 +2,73 @@ body {
     padding-top: 75px;
     padding-bottom: 35px;
 }
+
+.whiteboard {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    contain: layout;
+}
+
+#wbdv-course {
+    margin-right: 85px;
+}
+
+.wbdv-lessons {
+    padding-left: 30px;
+    vertical-align: hanging;
+}
+
+.wbdv-course-editor {
+    font-size: larger;
+}
+
+.wbdv-course-title {
+    font-size: x-large;
+}
+
+.wbdv-lesson-tabs {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wbdv-lesson-add-btn {
+    color: white;
+
+}
+
+.wbdv-module-list {
+
+}
+
+.wbdv-module-item {
+
+}
+
+.wbdv-module-item-title {
+
+}
+
+.wbdv-module-item-delete-btn {
+
+}
+
+.wbdv-module-item-add-btn {
+
+}
+
+.wbdv-topic-pill {
+
+}
+
+.add-btn {
+    align-content: space-around;
+}
+
+.col-8 {
+}
+
+.col-3 {
+    background-color: white;
+}

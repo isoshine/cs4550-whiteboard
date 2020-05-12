@@ -1,4 +1,39 @@
 body {
     padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
 }
 
+.wbdv-field {
+    cursor: default;
+    margin-bottom: 20px;
+}
+
+.wbdv-link {
+    visibility: initial;
+    padding-bottom: 10px;
+}
+
+.wbdv-label {
+    text-align: left;
+    display: block;
+    overflow: scroll;
+}
+
+.wbdv-button {
+    color: white;
+    cursor: grab;
+}
+
+.wbdv-message {
+    display: block;
+    position: marker;
+}
+
+.wbdv-header {
+    color: black;
+}
+
+.wbdv-row {
+    color: dimgrey;
+}

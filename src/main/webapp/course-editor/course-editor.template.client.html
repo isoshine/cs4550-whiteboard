@@ -24,18 +24,20 @@
 <div class="container">
     <nav class="navbar fixed-top navbar-expand-lg bg-light">
         <a class="navbar-brand" href="#">
+            <div id="wbdv-course">
             <i class="wbdv-course-editor wbdv-close fa fa-times-circle"
                aria-hidden="true"></i>
             <a class="wbdv-course-title" href="#">CS 4550</a>
+            </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="wbdv-lessons navbar-nav">
                 <li class="nav-item active">
-                    <a class="wbdv-lesson-tabs nav-link" href="#">Lesson 1 <span class="sr-only">(current)</span></a>
+                    <a class="wbdv-lesson-tabs nav-link" href="#">Lesson 1 </a>
                 </li>
                 <li class="nav-item">
                     <a class="wbdv-lesson-tabs nav-link" href="#">Lesson 2</a>
@@ -43,14 +45,14 @@
                 <li class="nav-item">
                     <a class="wbdv-lesson-tabs nav-link" href="#">Lesson 3</a>
                 </li>
-                <li class="nav-item">
-                    <a class="wbdv-lesson-add-btn btn fa fa-plus"></a>
+                <li class="add-btn nav-item wbdv-lesson-add-btn btn btn-primary">
+                    <a>Add</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <h1>WhiteBoard</h1>
+    <h1 class="whiteboard">WhiteBoard</h1>
 
     <div class="row">
         <div class="col-3">
@@ -94,7 +96,7 @@
                                aria-hidden="true"></i>
                         </a></li>
                     <li>
-                        <a class="btn btn-primary wbdv-module-item-add-btn" href="#">
+                        <a class="add-btn btn btn-primary wbdv-module-item-add-btn" href="#">
                             Add
                         </a>
                     </li>
@@ -107,16 +109,16 @@
             <div>
                 <ol class="nav">
                     <li class="nav-item">
-                        <a class="wbdv-topic-pill nav-link active" href="#">Topic 1</a>
+                        <a class="wbdv-topic-pill-list nav-link active" href="#">Topic 1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="wbdv-topic-pill nav-link active" href="#">Topic 2</a>
+                        <a class="wbdv-topic-pill-list nav-link active" href="#">Topic 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="wbdv-topic-pill nav-link active" href="#">Topic 3</a>
+                        <a class="wbdv-topic-pill-list nav-link active" href="#">Topic 3</a>
                     </li>
                     <li>
-                        <a class="btn btn-primary wbdv-topic-add-btn" href="#">
+                        <a class="add-btn btn btn-primary wbdv-topic-add-btn" href="#">
                             Add
                         </a>
                     </li>
