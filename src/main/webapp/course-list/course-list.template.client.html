@@ -19,7 +19,12 @@
 <div class="container">
 
     <nav class="navbar fixed-top navbar-expand-lg bg-light">
-        <a class="navbar-brand" href="#">Course Manager</a>
+        <a class="wbdv-field wbdv-hamburger" href="#">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+        <a class="navbar-brand wbdv-label wbdv-course-manager" href="#">
+            &nbsp WhiteBoard
+        </a>
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -32,13 +37,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2"
-                       type="add" placeholder="New Course Title"
+                <input class="wbdv-field wbdv-new-course form-control mr-sm-2"
+                       type="add"
+                       placeholder="New Course Title"
                        aria-label="add">
-                <button class="btn btn-outline-success my-2 my-sm-0"
-                        type="submit">
-                    <i class="fa fa-plus"></i>
-                </button>
+                <i class="wbdv-button wbdv-add-course btn btn-success fa fa-plus"></i>
             </form>
         </div>
     </nav>
@@ -47,91 +50,140 @@
 
     <table class="table">
         <thead>
-        <tr class="">
-            <td>Title</td>
-            <td>Owned By</td>
-            <td>Last Modified</td>
+        <tr class="wbdv-header">
+            <td class="wbdv-header wbdv-title">Title</td>
+            <td class="wbdv-header wbdv-owner">Owned By</td>
+            <td class="wbdv-header wbdv-last-modified">Last Modified</td>
             <td>
-                <i class="fa fa-sort" aria-hidden="true"></i>
-                <i class="fa fa-th" aria-hidden="true"></i>
+                <i class="wbdv-header wbdv-sort btn fa fa-sort"
+                   aria-hidden="true"></i>
             </td>
+            <td>
+                <i class="wbdv-button wbdv-grid-layout btn fa fa-th-large"
+                   aria-hidden="true"></i>
+                <i class="wbdv-button wbdv-list-layout btn fa fa-list"
+                   aria-hidden="true"></i>
+            </td>
+
         </tr>
         </thead>
 
         <tbody>
-        <tr>
-            <td>CS 1800</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                1800
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 5200</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                5200
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
-        <tr>
-            <td>CS 4550</td>
-            <td>JGA</td>
-            <td>Today</td>
-            <td><button class="float-right btn btn-danger">X</button></td>
+        <tr class="wbdv-row wbdv-course">
+            <td class="wbdv-row wbdv-title"><i class="wbdv-row wbdv-icon fa fa-book" aria-hidden="true"></i> &nbsp CS
+                4550
+            </td>
+            <td class="wbdv-row wbdv-owner">JGA</td>
+            <td class="wbdv-row wbdv-modified-date">Today</td>
+            <td></td>
+            <td><i class="wbdv-row wbdv-button wbdv-delete btn btn-danger float-right fa fa-times"
+                   aria-hidden="true"></i></td>
         </tr>
         </tbody>
         <tfoot></tfoot>
     </table>
 
-    <button class="wbdv-bottom-right-10px btn btn-success">
-        <i class="fa fa-plus"></i>
-    </button>
+    <i class="wbdv-bottom-right-10px btn btn-success fa fa-plus"></i>
 
 </div>
 </body>
