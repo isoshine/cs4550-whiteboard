@@ -18,7 +18,7 @@
         service.deleteUser(userId).then(function() {
             users = users.filter(function(user) {
                 return user._id !== userId;
-            })
+            });
             renderAllUsers()
         })
     }
@@ -36,7 +36,7 @@
             username: $usernameField.id,
             first: $firstField.val,
             last: $lastField.val()
-        }
+        };
         service.updateUser(selectedUser._id, updatedUser).then(function(status) {
             users = users.map(function(user) {
                 if (user._id === selectedUser._id) {

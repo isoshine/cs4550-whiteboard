@@ -9,22 +9,36 @@
 
     <script src="../services/user.service.client.js"></script>
 
-    <script src="./user-admin.controller.client.js"></script>
+    <script src="../user-admin.controller.client.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"/>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"/>
+
+    <!-- global -->
+    <link href="../style.css" rel="stylesheet"/>
+
+    <!-- specific -->
+    <link href="user-admin.style.client.css" rel="stylesheet"/>
+
 </head>
 
-<body>
+<body class="container">
+
 <h1>User Admin</h1>
 <table>
     <thead>
-    <tr>
-        <td>Username</td>
-        <td>Password</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Role</td>
+    <tr class="wbdv-row">
+        <td class="wbdv-title wbdv-username">Username</td>
+        <td class="wbdv-title wbdv-password">Password</td>
+        <td class="wbdv-title wbdv-first-name">First Name</td>
+        <td class="wbdv-title wbdv-last-name">Last Name</td>
+        <td class="wbdv-title wbdv-role">Role</td>
         <td></td>
     </tr>
-    <tr>
+    <tr class="wbdv-row">
         <td>
             <input class="wbdv-username-field"/>
         </td>
@@ -59,12 +73,13 @@
         <td class="wbdv-last-name">Kim</td>
         <td class="wbdv-role">Student</td>
         <td class="wbdv-controls">
-            <button class="wbdv-delete">Delete</button>
-            <button class="wbdv-edit">Edit</button>
+            <button class="wbdv-delete-btn">Delete</button>
+            <button class="wbdv-edit-btn">Edit</button>
         </td>
     </tr>
     </tbody>
 </table>
 
 </body>
+
 </html>
