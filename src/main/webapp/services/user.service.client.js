@@ -13,6 +13,7 @@ function AdminUserServiceClient() {
         const userString = JSON.stringify(user);
         console.log(userString);
 
+        //fetch is a GET method type
         return fetch(self.url, {
             method: 'POST',
             body: userString,
@@ -53,6 +54,9 @@ function AdminUserServiceClient() {
             })
     }
 
+    // same output:
+    // const promise = fetch(self.url);
+    // promise.then(function(response) { response.json() }) }
     function findAllUsers() {
         return fetch(self.url)
             .then(function(response) {

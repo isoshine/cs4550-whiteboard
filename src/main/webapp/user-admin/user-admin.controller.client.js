@@ -7,19 +7,22 @@
     var $tbody, $createBtn, $updateBtn, $removeBtn, $editBtn;
     var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
-    let selectedUser;
+    let selectedUser = {};
 
     let userService = new AdminUserServiceClient();
     $(main);
 
+    //updating the form fields (after selecting to edit row)
     function renderUser(user) {
         selectedUser = user;
-        $usernameFld = user;
-        $firstNameFld.val(user.name);
+
+        $usernameFld.val(user.username);
+        $firstNameFld.val(user.first);
         $lastNameFld.val(user.last);
+        $roleFld.val(user.role);
     }
 
-    function selectUser(event) {
+    function editUser(event) {
         const target = event.currentTarget;
         const $button = $(target);
         const userId = $button.attr('id');
@@ -42,12 +45,18 @@
             copy.find('.wbdv-first-name').html(user.first);
             copy.find('.wbdv-last-name').html(user.last);
             copy.find('.wbdv-role').html(user.role);
-            copy.find('.wbdv-delete')
+
+            //copy.find('.wbdv-create')
+            //    .click(createUser);
+
+            copy.find('.wbdv-remove')
                 .attr('id', user._id)
                 .click(deleteUser);
+
             copy.find('.wbdv-edit')
                 .attr('id', user._id)
-                .click(selectUser);
+                .click(editUser);
+
             $tbody.append(copy);
 
         }
@@ -80,7 +89,10 @@
         const userId = $button.attr('id');
 
         userService.deleteUser(userId).then(function() {
+            //filter operation removes the one user
             users = users.filter(function(user) {
+                //true: we want to keep it
+                //false: we don't want to keep it
                 return user._id !== userId;
 
             });
@@ -92,21 +104,21 @@
     function updateUser() {
         const updatedUser = {
             _id: selectedUser._id,
-            username: $usernameFld.id,
-            first: $firstNameFld.val,
+            username: $usernameFld.val(),
+            password: $passwordFld.val(),
+            first: $firstNameFld.val(),
             last: $lastNameFld.val(),
             role: $roleFld.val()
         };
 
         userService.updateUser(selectedUser._id, updatedUser).then(function(status) {
+            //map iterates over array and passes each element of array
             users = users.map(function(user) {
                 if (user._id === selectedUser._id) {
-                    users.push(updatedUser);
-                    renderAllUsers();
+                    return updatedUser;
                 }
                 else {
-                    users.push(user);
-                    renderAllUsers();
+                    return user;
                 }
             })
         })
@@ -124,10 +136,10 @@
     function main() {
         //wrapping elements in the jQuery wrapper
         $tbody = $('tbody');
-        $createBtn = $('.wbdv-add-btn');
-        $removeBtn = $('.wbdv-delete-btn');
-        $updateBtn = $('.wbdv-update-btn');
-        $editBtn = $('.wbdv-edit-btn');
+        $createBtn = $('.wbdv-create');
+        $removeBtn = $('.wbdv-remove');
+        $updateBtn = $('.wbdv-update');
+        $editBtn = $('.wbdv-edit');
 
         $usernameFld = $('.wbdv-username-field');
         $passwordFld = $('.wbdv-password-field');
@@ -141,15 +153,15 @@
         $removeBtn.click(deleteUser);
         $updateBtn.click(updateUser);
 
+        findAllUsers();
+
         /*for(let i=0; i<users.length; i++) {
             const username = users[i].username;
             const newUserRow = $('<tr><td>'+username+'</td></tr>');
             $tbody.append(newUserRow);
         }*/
 
-        findAllUsers();
     }
-
     jQuery(main);
 })();
 
