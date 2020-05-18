@@ -3,33 +3,27 @@
 
 (function() {
 
-    let users = [{
-        username: "username",
-        password: "********",
-        first: "First",
-        last: "Last",
-        role: "ROLE"
-    }];
-
-
-    let $tbody, $addbtn, $updatebtn, $deletebtn;
-    let $usernameField, $passwordField, $firstField, $lastField, $roleField;
+    let users = [];
+    var $tbody, $createBtn, $updateBtn, $removeBtn, $editBtn;
+    var $usernameFld, $passwordFld;
+    var $firstNameFld, $lastNameFld, $roleFld;
     let selectedUser;
-    let service = new AdminUserServiceClient();
 
+    let userService = new AdminUserServiceClient();
+    $(main);
 
     function renderUser(user) {
         selectedUser = user;
-        $usernameField = user;
-        $firstField.val(user.name);
-        $lastField.val(user.last);
+        $usernameFld = user;
+        $firstNameFld.val(user.name);
+        $lastNameFld.val(user.last);
     }
 
     function selectUser(event) {
         const target = event.currentTarget;
         const $button = $(target);
         const userId = $button.attr('id');
-        service.findUserById(userId).then(function(user){
+        userService.findUserById(userId).then(function(user){
             console.log(user);
             renderUser(user);
         })
@@ -60,11 +54,11 @@
     }
 
     function createUser() {
-        const username = $usernameField.val();
-        //const password = $passwordField.val();
-        const first = $firstField.val();
-        const last = $lastField.val();
-        const role = $roleField.val();
+        const username = $usernameFld.val();
+        //const password = $passwordFld.val();
+        const first = $firstNameFld.val();
+        const last = $lastNameFld.val();
+        const role = $roleFld.val();
 
         const newUser = {
             username: username,
@@ -73,7 +67,7 @@
             role: role
         };
 
-        service.createUser(newUser).then(function (actualUser) {
+        userService.createUser(newUser).then(function (actualUser) {
             users.push(actualUser);
             renderAllUsers();
         })
@@ -85,9 +79,7 @@
         const $button = $(target);
         const userId = $button.attr('id');
 
-        //alert('delete user ' + userId);
-
-        service.deleteUser(userId).then(function() {
+        userService.deleteUser(userId).then(function() {
             users = users.filter(function(user) {
                 return user._id !== userId;
 
@@ -97,16 +89,16 @@
     }
 
 
-    function updateUser(event) {
+    function updateUser() {
         const updatedUser = {
             _id: selectedUser._id,
-            username: $usernameField.id,
-            first: $firstField.val,
-            last: $lastField.val(),
-            role: $roleField.val()
+            username: $usernameFld.id,
+            first: $firstNameFld.val,
+            last: $lastNameFld.val(),
+            role: $roleFld.val()
         };
 
-        service.updateUser(selectedUser._id, updatedUser).then(function(status) {
+        userService.updateUser(selectedUser._id, updatedUser).then(function(status) {
             users = users.map(function(user) {
                 if (user._id === selectedUser._id) {
                     users.push(updatedUser);
@@ -122,39 +114,38 @@
 
 
     function findAllUsers() {
-        service.findAllUsers().then(function(allUsers) {
+        userService.findAllUsers().then(function(allUsers) {
             users = allUsers;
             renderAllUsers();
         })
     }
 
+    //main function put at the bottom
     function main() {
         //wrapping elements in the jQuery wrapper
         $tbody = $('tbody');
-        $addbtn = $('.wbdv-add-btn');
-        $deletebtn = $('.wbdv-delete-btn');
-        $updatebtn = $('.wbdv-update-btn');
+        $createBtn = $('.wbdv-add-btn');
+        $removeBtn = $('.wbdv-delete-btn');
+        $updateBtn = $('.wbdv-update-btn');
+        $editBtn = $('.wbdv-edit-btn');
 
+        $usernameFld = $('.wbdv-username-field');
+        $passwordFld = $('.wbdv-password-field');
+        $firstNameFld = $('.wbdv-first-name-field');
+        $lastNameFld = $('.wbdv-last-name-field');
+        $roleFld = $('.wbdv-role-field');
 
         //when we add () after a function call, it means we want to execute the function
         //right away
-        $addbtn.click(createUser);
-        $updatebtn.click(updateUser);
-        $deletebtn.click(deleteUser);
+        $createBtn.click(createUser);
+        $removeBtn.click(deleteUser);
+        $updateBtn.click(updateUser);
 
-        $usernameField = $('.wbdv-username-field');
-        $passwordField = $('.wbdv-password-field');
-        $firstField = $('.wbdv-first-name-field');
-        $lastField = $('.wbdv-last-name-field');
-        $roleField = $('.wbdv-role-field');
-
-        //findAllUsers();
-
-        for(let i=0; i<users.length; i++) {
+        /*for(let i=0; i<users.length; i++) {
             const username = users[i].username;
             const newUserRow = $('<tr><td>'+username+'</td></tr>');
             $tbody.append(newUserRow);
-        }
+        }*/
 
         findAllUsers();
     }

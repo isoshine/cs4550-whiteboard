@@ -4,10 +4,9 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-
     //this.url = 'http://localhost:8080/users';
     this.url = 'https://wbdv-generic-server.herokuapp.com/api/kim.shine/modules';
-    const self = this;
+    let self = this;
 
     function createUser(user) {
         console.log('creating user');
@@ -26,6 +25,17 @@ function AdminUserServiceClient() {
             })
     }
 
+    function deleteUser(userId) {
+        console.log('removing user: ' + userId);
+
+        return fetch(self.url + '/' + userId, {
+            method: 'DELETE'
+        })
+            .then(function(response) {
+                return response.json();
+            })
+    }
+
     function updateUser(userId, user) {
         console.log('updating user' + userId);
         const userString = JSON.stringify(user);
@@ -40,17 +50,6 @@ function AdminUserServiceClient() {
         })
             .then(function(response) {
                 return response.json()
-            })
-    }
-
-    function deleteUser(userId) {
-        console.log('removing user: ' + userId);
-
-        return fetch(self.url + '/' + userId, {
-            method: 'DELETE'
-        })
-            .then(function(response) {
-                return response.json();
             })
     }
 
