@@ -5,11 +5,12 @@ function AdminUserServiceClient() {
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
 
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/shinekim/users';
-    var self = this;
+    //this.url = 'http://localhost:8080/users';
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/kim.shine/modules';
+    const self = this;
+
     function createUser(user) {
         console.log('creating user');
-        console.log(user);
         const userString = JSON.stringify(user);
         console.log(userString);
 
@@ -25,24 +26,14 @@ function AdminUserServiceClient() {
             })
     }
 
-    function findAllUsers() {
-        return fetch(self.url)
-            .then(function(response) {
-                return response.json()
-            })
-    }
-
-    function findUserById(userId) {
-        return fetch(self.url + '/' + userId)
-            .then(function(response) {
-                return response.json()
-            })
-    }
-
     function updateUser(userId, user) {
+        console.log('updating user' + userId);
+        const userString = JSON.stringify(user);
+        console.log(userString);
+
         return fetch(self.url + '/' + userId, {
             method: 'PUT',
-            body: JSON.stringify(user),
+            body: userString,
             headers: {
                 'content-type': 'application/json'
             }
@@ -54,11 +45,26 @@ function AdminUserServiceClient() {
 
     function deleteUser(userId) {
         console.log('removing user: ' + userId);
+
         return fetch(self.url + '/' + userId, {
             method: 'DELETE'
         })
             .then(function(response) {
                 return response.json();
+            })
+    }
+
+    function findAllUsers() {
+        return fetch(self.url)
+            .then(function(response) {
+                return response.json()
+            })
+    }
+
+    function findUserById(userId) {
+        return fetch(self.url + '/' + userId)
+            .then(function(response) {
+                return response.json()
             })
     }
 }
