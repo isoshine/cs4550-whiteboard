@@ -32,7 +32,7 @@
         })
     }
 
-    function renderAllUsers() {
+    function renderUsers() {
         const template = $('.wbdv-user-row-template')[0];
         const $template = $(template);
         const clone = $template.clone();
@@ -78,7 +78,7 @@
 
         userService.createUser(newUser).then(function (actualUser) {
             users.push(actualUser);
-            renderAllUsers();
+            renderUsers();
         })
     }
 
@@ -96,7 +96,7 @@
                 return user._id !== userId;
 
             });
-            renderAllUsers();
+            renderUsers();
         })
     }
 
@@ -128,7 +128,7 @@
     function findAllUsers() {
         userService.findAllUsers().then(function(allUsers) {
             users = allUsers;
-            renderAllUsers();
+            renderUsers();
         })
     }
 

@@ -3,6 +3,10 @@ body {
     padding-bottom: 35px;
 }
 
+.wbdv-lesson-tabs {
+    margin-bottom: 0px;
+}
+
 .whiteboard {
     margin-bottom: 20px;
 }
@@ -20,12 +24,14 @@ body {
     vertical-align: hanging;
 }
 
+
 .wbdv-course-editor {
     font-size: larger;
 }
 
 .wbdv-course-title {
-    font-size: x-large;
+    font-size: small;
+    margin-left: 20px;
 }
 
 .wbdv-lesson-tabs {
@@ -35,7 +41,7 @@ body {
 
 .wbdv-lesson-add-btn {
     color: white;
-
+    margin-top: -20px;
 }
 
 .wbdv-module-list {
