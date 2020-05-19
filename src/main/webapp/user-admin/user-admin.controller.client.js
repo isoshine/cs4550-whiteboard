@@ -58,7 +58,6 @@
                 .click(editUser);
 
             $tbody.append(copy);
-
         }
     }
 
@@ -79,7 +78,7 @@
         userService.createUser(newUser).then(function (actualUser) {
             users.push(actualUser);
             renderUsers();
-        })
+        }).then(resetForm);
     }
 
     function deleteUser(event) {
@@ -99,7 +98,6 @@
             renderUsers();
         })
     }
-
 
     function updateUser() {
         const updatedUser = {
@@ -121,15 +119,22 @@
                     return user;
                 }
             })
-        })
+        }).then(resetForm).then(updatePage);
     }
-
 
     function findAllUsers() {
         userService.findAllUsers().then(function(allUsers) {
             users = allUsers;
             renderUsers();
         })
+    }
+
+    function updatePage() {
+        location.reload();
+    }
+
+    function resetForm() {
+        document.getElementById("userForm").reset();
     }
 
     //main function put at the bottom
@@ -160,8 +165,8 @@
             const newUserRow = $('<tr><td>'+username+'</td></tr>');
             $tbody.append(newUserRow);
         }*/
-
     }
+
     jQuery(main);
 })();
 

@@ -18,6 +18,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+
     <script src="../services/user.service.client.js"></script>
 
     <script src="user-admin.controller.client.js"></script>
@@ -32,67 +36,83 @@
     <thead>
     <tr class="wbdv-row">
         <td class="wbdv-title wbdv-username">Username</td>
-        <td class="wbdv-title wbdv-password">Password</td>
+        <td class="wbdv-title wbdv-password d-sm-block d-none">Password</td>
         <td class="wbdv-title wbdv-first-name">First Name</td>
         <td class="wbdv-title wbdv-last-name">Last Name</td>
-        <td class="wbdv-title wbdv-role">Role</td>
+        <td class="wbdv-title wbdv-role d-sm-block d-none">Role</td>
         <td>&nbsp;</td>
     </tr>
     <tr class="wbdv-form">
-        <td>
-            <input class="wbdv-username-field form-control"
-                   id="usernameFld"
-                   placeholder="username"/>
-        </td>
-        <td>
-            <input class="wbdv-password-field form-control"
-                   id="passwordFld"
-                   placeholder="********"/>
-        </td>
-        <td>
-            <input class="wbdv-first-name-field form-control"
-                   id="firstNameFld"
-                   placeholder="First Name"/>
-        </td>
-        <td>
-            <input class="wbdv-last-name-field form-control"
-                   id="lastNameFld"
-                   placeholder="Last Name"/>
-        </td>
-        <td>
-            <select class="wbdv-role-field form-control"
-                    id="roleFld">
-                <option value="FACULTY">FACULTY</option>
-                <option value="STUDENT">STUDENT</option>
-                <option value="ADMIN">ADMIN</option>
-            </select>
-        </td>
-        <td>
-            <button class="wbdv-create">Add</button>
-            <button class="wbdv-update">Update</button>
-            <button class="wbdv-search">Search</button>
-        </td>
+        <form id="userForm">
+            <td>
+                <input class="wbdv-username-field form-control"
+                       id="usernameFld"
+                       required
+                       placeholder="username"/>
+            </td>
+            <td class="d-sm-block d-none">
+                <input class="wbdv-password-field form-control"
+                       id="passwordFld"
+                       required
+                       placeholder="********"/>
+            </td>
+            <td>
+                <input class="wbdv-first-name-field form-control"
+                       id="firstNameFld"
+                       required
+                       placeholder="First Name"/>
+            </td>
+            <td>
+                <input class="wbdv-last-name-field form-control"
+                       id="lastNameFld"
+                       required
+                       placeholder="Last Name"/>
+            </td>
+            <td class="">
+                <select class="wbdv-role-field form-control d-sm-block d-none"
+                        id="roleFld">
+                    <option value="FACULTY">FACULTY</option>
+                    <option value="STUDENT">STUDENT</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </td>
+            <td>
+                <i id="wbdv-create"
+                   class="wbdv-create wbdv-button btn btn-success fa fa-plus"
+                   aria-hidden="true">
+                </i>
+
+                <i id="wbdv-update"
+                   class="wbdv-update wbdv-button btn btn-primary fa fa-check"
+                   aria-hidden="true">
+                </i>
+                <i id="wbdv-search"
+                   class="wbdv-search wbdv-button btn btn-secondary fa fa-search"
+                   aria-hidden="true">
+                </i>
+            </td>
+        </form>
     </tr>
     </thead>
 
     <tbody class="wbdv-tbody">
     <tr class="wbdv-user-row-template wbdv-template wbdv-user wbdv-hidden">
         <td class="wbdv-username">isoshine</td>
-        <td class="wbdv-password">***********</td>
+        <td class="wbdv-password d-sm-block d-none">***********</td>
         <td class="wbdv-first-name">Shine</td>
         <td class="wbdv-last-name">Kim</td>
         <td class="wbdv-role">STUDENT</td>
         <td class="wbdv-actions">
-            <button id="wbdv-remove"
-                    class="wbdv-remove">Delete</button>
-            <button id="wbdv-edit"
-                    class="wbdv-edit">Edit</button>
+            <i id="wbdv-remove"
+               class="wbdv-button wbdv-remove btn btn-danger fa fa-times"
+               aria-hidden="true"></i>
+            <i id="wbdv-edit"
+               class="wbdv-button wbdv-edit btn btn-primary fa fa-pencil"
+               aria-hidden="true"></i>
         </td>
     </tr>
     </tbody>
 </table>
-
-
 </body>
 
 </html>
