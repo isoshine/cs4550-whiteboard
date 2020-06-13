@@ -3,6 +3,7 @@ package com.example.cs455020su1shinekimserverjava.controllers;
 import com.example.cs455020su1shinekimserverjava.models.Widget;
 import com.example.cs455020su1shinekimserverjava.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,11 @@ public class WidgetController {
   @GetMapping("/api/topics/{topicId}/widgets/")
   public List<Widget> findWidgetsForTopic(@PathVariable("topicId") String tId) {
     return widgetService.findWidgetsForTopic(tId);
+  }
+
+  //listens for incoming deletes with this pattern
+  @DeleteMapping("api/widget/{widgetId}")
+  public void deleteWidget(@PathVariable("widgetId") Integer wId) {
+    widgetService.deleteWidget(wId);
   }
 }

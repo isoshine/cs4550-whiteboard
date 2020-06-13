@@ -38,4 +38,8 @@ public class WidgetService {
     }
     return null;
   }
+
+  public void deleteWidget(Integer wId) {
+    //something
+  }
 }
