@@ -51,9 +51,12 @@ public class WidgetService {
   }
 
   public Widget createWidget(String topicId, Widget newWidget) {
+    int order = findWidgetsForTopic(topicId).size() + 1;
+    newWidget.setName("widget");
     newWidget.setId(UUID.randomUUID().toString());
     newWidget.setTopicId(topicId);
-    newWidget.setWidgetOrder(widgets.size()+1);
+    newWidget.setSize(1);
+    newWidget.setWidgetOrder(order);
     this.widgets.add(newWidget);
 
     return newWidget;
