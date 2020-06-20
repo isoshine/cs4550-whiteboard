@@ -11,6 +11,15 @@ import java.util.UUID;
 public class WidgetService {
   private List<Widget> widgets = new ArrayList<Widget>();
 
+  public int deleteAllWidgets() {
+    List<Widget> resetWidgets;
+    resetWidgets = new ArrayList<Widget>();
+    widgets = resetWidgets;
+    if (this.widgets.size() == 0) {
+      return 1;
+    }
+    return 0;
+  }
 
   public List<Widget> findWidgetsForTopic(String tId) {
     List<Widget> result = new ArrayList<Widget>();
